@@ -133,7 +133,7 @@ define(function (require) {
 					EffectManager.spam(EF_Init_Par);
 				}
 			}
-			if (entity.objecttype === Entity.TYPE_NPC || Entity.TYPE_WARP) {
+			if (entity.objecttype === Entity.TYPE_NPC || entity.objecttype === Entity.TYPE_WARP) {
 				const mapName = getModule("Renderer/MapRenderer").currentMap.replace('.gat', '').toLowerCase();
 				let signboardData = DB.findSignboard(mapName, entity.position[0], entity.position[1], 1);
 				if (signboardData) {
@@ -402,7 +402,7 @@ define(function (require) {
 					play: true
 				});
 			}
-			
+
 			entity.resetRoute();
 			entity.position[0] = pkt.xPos;
 			entity.position[1] = pkt.yPos;
@@ -592,7 +592,7 @@ define(function (require) {
 						otherPosition: srcEntity.position
 					};
 					EffectManager.spam(EF_Init_Par);
-					
+
 				} else if (srcEntity.job in AttackEffect.SPAWN){ // Non player special ranged attack
 					var EF_Init_Par = {
 						effectId: AttackEffect.SPAWN[srcEntity.job],
@@ -2065,7 +2065,7 @@ define(function (require) {
 					EffectManager.spam(EF_Init_Par);
 				}
 				break;
-				
+
 			case StatusConst.SUHIDE:
 				if (pkt.state == 1) {
 					entity.setAction({
@@ -2085,7 +2085,7 @@ define(function (require) {
 					});
 				}
 				break;
-				
+
 			case StatusConst.SU_STOOP:
 				if (pkt.state == 1) {
 					entity.setAction({
